@@ -1,14 +1,14 @@
 .nav{
     height: 80px;
-    width: 100;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 12%;
-    
     top: 0;
     z-index: 99;
-    /*position: fixed;*/
+    position: fixed;
+    background-color: #fff;
 }
 
 .nav .logo a{
@@ -24,10 +24,35 @@
 .nav ul li{
     display: inline-block;
     margin: 0 15px;
+    transition-duration: 0.5s;
 }
+
+.nav ul li:hover{
+    transform: scale(1.15);
+    transition: all 0.2s ease-in-out;
+}
+
 
 .nav ul li a{
     color: black;
     font-weight: 500;
     font-size: 16px;
+}
+
+.regBtn{
+    color: white;
+    background-color: green;
+}
+
+.loginBtn{
+    color: white;
+    background-color: green;
+}
+
+.regBtn:hover{
+    transform: scale(1.1);
+}
+
+.loginBtn:hover{
+    transform: scale(1.1);
 }

@@ -2,9 +2,9 @@ package com.hotelBooking.Hotel.Reservation.System.Service;
 
 import com.hotelBooking.Hotel.Reservation.System.DTO.BookingRequest;
 import com.hotelBooking.Hotel.Reservation.System.Entity.Booking;
-import com.hotelBooking.Hotel.Reservation.System.Entity.Hotel;
+import com.hotelBooking.Hotel.Reservation.System.Entity.Room;
 import com.hotelBooking.Hotel.Reservation.System.Repository.BookingRepository;
-import com.hotelBooking.Hotel.Reservation.System.Repository.HotelRepository;
+import com.hotelBooking.Hotel.Reservation.System.Repository.RoomRepository;
 import org.springframework.stereotype.Service;
 
 
@@ -13,16 +13,16 @@ import java.time.LocalDate;
 @Service
 public class BookingService {
     private final BookingRepository bookingRepository;
-    private final HotelRepository hotelRepository;
+    private final RoomRepository hotelRepository;
 
-    public BookingService(BookingRepository bookingRepository, HotelRepository hotelRepository) {
+    public BookingService(BookingRepository bookingRepository, RoomRepository hotelRepository) {
         this.bookingRepository = bookingRepository;
         this.hotelRepository = hotelRepository;
     }
 
     public void bookHotel(BookingRequest bookingRequest) {
         // Fetch the hotel details
-        Hotel hotel = hotelRepository.findById(bookingRequest.getHotelId())
+        Room hotel = hotelRepository.findById(bookingRequest.getHotelId())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid hotel ID"));
 
         // Check room availability

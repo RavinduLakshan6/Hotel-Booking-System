@@ -1,12 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
-import Nav from './Components/Navigation-Bar/Nav';
+import { Route , Routes } from 'react-router-dom';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Room from './Pages/Room';
+import Review from './Pages/Review';
+
 
 function App() {
   return (
+
     <div>
-      <Nav/>
+    
+    <Routes>
+      <Route path="/" element={<Home/>} />
+      <Route path="/about" element={<About/>} />
+      <Route path="/room" element={<Room/>} />
+      <Route path="/review" element={<Review/>} />
+    </Routes>
+    
+
     </div>
+
   );
 }
 
