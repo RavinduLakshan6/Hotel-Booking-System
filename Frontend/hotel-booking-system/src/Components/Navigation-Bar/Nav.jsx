@@ -9,15 +9,15 @@ export default function Nav() {
             </div>
 
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Rooms</a></li>
-                <li><a href="#">Category</a></li>
-                <li><a href="#">Reviews</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/room">Rooms</a></li>
+                <li><a href="/review">Reviews</a></li>
+                <li><a href="/about">About Us</a></li>
             </ul> 
 
             <div className="navBtn">
-                <button className="btn">Book Now</button>    
+                <button className="loginBtn">Login</button>  
+                <button className="regBtn">Register</button>    
             </div>   
     </div>
   )
