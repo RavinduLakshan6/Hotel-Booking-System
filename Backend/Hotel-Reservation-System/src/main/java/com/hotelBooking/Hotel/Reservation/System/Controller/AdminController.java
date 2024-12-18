@@ -43,10 +43,10 @@ public class AdminController {
         if (roomOptional.isPresent()) {
             Room room = roomOptional.get();
             room.setId(updatedRoom.getId());
-            room.setName(updatedRoom.getName());
-            room.setLocation(updatedRoom.getLocation());
-            room.setTotalRooms(updatedRoom.getTotalRooms());
-            room.setAvailableRooms(updatedRoom.getAvailableRooms());
+            // room.setName(updatedRoom.getName());
+            // room.setLocation(updatedRoom.getLocation());
+            // room.setTotalRooms(updatedRoom.getTotalRooms());
+            // room.setAvailableRooms(updatedRoom.getAvailableRooms());
             roomRepository.save(room);
             return ResponseEntity.ok("Room updated successfully");
         } else {

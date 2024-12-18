@@ -2,19 +2,36 @@ package com.hotelBooking.Hotel.Reservation.System.Entity;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "hotels")
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
+@Document(collection = "rooms")
 
 @Data
 public class Room {
     @Id
     private String id;
 
-    private String name;
-    private String location;
-    private int totalRooms;
-    private int availableRooms;
+    private String roomType;
+    private BigDecimal roomPrice;
+    private String roomPhotoUrl;
+    private String roomDescription;
 
-    // Getters and Setters
+    @DBRef
+    private List<Booking> bookings=new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "id='" + id + '\'' +
+                ", roomType='" + roomType + '\'' +
+                ", roomPrice=" + roomPrice +
+                ", roomPhotoUrl='" + roomPhotoUrl + '\'' +
+                ", roomDescription='" + roomDescription + '\'' +
+                '}';
+    }
 }
