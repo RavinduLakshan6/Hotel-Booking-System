@@ -26,13 +26,13 @@ public class BookingService {
                 .orElseThrow(() -> new IllegalArgumentException("Invalid hotel ID"));
 
         // Check room availability
-        if (hotel.getAvailableRooms() < bookingRequest.getRooms()) {
-            throw new IllegalArgumentException("Not enough rooms available");
-        }
+        // if (hotel.getAvailableRooms() < bookingRequest.getRooms()) {
+        //     throw new IllegalArgumentException("Not enough rooms available");
+        // }
 
-        // Update room availability
-        hotel.setAvailableRooms(hotel.getAvailableRooms() - bookingRequest.getRooms());
-        hotelRepository.save(hotel);
+        // // Update room availability
+        // hotel.setAvailableRooms(hotel.getAvailableRooms() - bookingRequest.getRooms());
+        // hotelRepository.save(hotel);
 
         // Save the booking
 
