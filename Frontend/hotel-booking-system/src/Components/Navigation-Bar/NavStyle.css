@@ -56,3 +56,21 @@
 .loginBtn:hover{
     transform: scale(1.1);
 }
+
+.profileBtn{
+    color: white;
+    background-color: green;
+}
+
+.profileBtn:hover{
+    transform: scale(1.1);
+}
+
+.logoutBtn{
+    color: white;
+    background-color: green;
+}
+
+.logoutBtn:hover{
+    transform: scale(1.1);
+}
