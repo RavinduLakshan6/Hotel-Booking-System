@@ -37,11 +37,11 @@ public class BookingService {
         // Save the booking
 
         Booking booking = new Booking();
-        booking.setHotelId(hotel.getId());
-        booking.setGuestName(bookingRequest.getGuestName());
-        booking.setRooms(bookingRequest.getRooms());
-        booking.setBookingDate(LocalDate.now());
-        booking.setCheckInDate(bookingRequest.getCheckInDate());
+        // booking.setHotelId(hotel.getId());
+        // booking.setGuestName(bookingRequest.getGuestName());
+        // booking.setRooms(bookingRequest.getRooms());
+        // booking.setBookingDate(LocalDate.now());
+        // booking.setCheckInDate(bookingRequest.getCheckInDate());
 
         booking.setCheckOutDate(bookingRequest.getCheckOutDate());
         bookingRepository.save(booking);
