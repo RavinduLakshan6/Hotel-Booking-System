@@ -1,18 +1,20 @@
 package com.hotelBooking.Hotel.Reservation.System.DTO;
 
-
-import lombok.Getter;
-import lombok.Setter;
-
 import java.time.LocalDate;
 
-@Getter
-@Setter
-public class BookingRequest {
-    private String hotelId;
-    private String guestName;
-    private int rooms;
-    private LocalDate checkInDate;
-    private LocalDate checkOutDate;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
+import lombok.Data;
+
+@Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class BookingRequest {
+
+    private String id;
+    private LocalDate checkIDate;
+    private LocalDate checkOutDate;
+    private int totalGuests;
+    private String bookingConformationCode;
+    private UserRequest user;
+    private RoomRequest room;
 }

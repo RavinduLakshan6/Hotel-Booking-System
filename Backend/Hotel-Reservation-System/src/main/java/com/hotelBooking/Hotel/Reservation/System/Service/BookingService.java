@@ -22,8 +22,8 @@ public class BookingService {
 
     public void bookHotel(BookingRequest bookingRequest) {
         // Fetch the hotel details
-        Room hotel = hotelRepository.findById(bookingRequest.getHotelId())
-                .orElseThrow(() -> new IllegalArgumentException("Invalid hotel ID"));
+      //  Room hotel = hotelRepository.findById(bookingRequest.getHotelId())
+//                .orElseThrow(() -> new IllegalArgumentException("Invalid hotel ID"));
 
         // Check room availability
         // if (hotel.getAvailableRooms() < bookingRequest.getRooms()) {
@@ -43,7 +43,7 @@ public class BookingService {
         // booking.setBookingDate(LocalDate.now());
         // booking.setCheckInDate(bookingRequest.getCheckInDate());
 
-        booking.setCheckOutDate(bookingRequest.getCheckOutDate());
-        bookingRepository.save(booking);
+    //    booking.setCheckOutDate(bookingRequest.getCheckOutDate());
+      //  bookingRepository.save(booking);
     }
 }
