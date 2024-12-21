@@ -15,5 +15,6 @@ public interface RoomRepository extends MongoRepository<Room, String> {
     @Query("{'bookings':{$size:0}}")
     List<Room> findAvailableRooms();
 
-    List<Room> findByRoomTypeLikeAndIdnotIn(String roomType, List<String> bookedRoomIds);
+    List<Room> findByRoomTypeLikeAndIdNotIn(String roomType, List<String> ids);
+
 }
