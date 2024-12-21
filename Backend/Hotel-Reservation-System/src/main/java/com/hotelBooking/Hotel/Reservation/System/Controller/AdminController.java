@@ -1,10 +1,13 @@
 package com.hotelBooking.Hotel.Reservation.System.Controller;
 
+import com.hotelBooking.Hotel.Reservation.System.DTO.BookingRequest;
 import com.hotelBooking.Hotel.Reservation.System.Entity.Booking;
 import com.hotelBooking.Hotel.Reservation.System.Entity.Room;
 import com.hotelBooking.Hotel.Reservation.System.Repository.BookingRepository;
 import com.hotelBooking.Hotel.Reservation.System.Repository.RoomRepository;
 import java.util.Optional;
+
+import com.hotelBooking.Hotel.Reservation.System.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
