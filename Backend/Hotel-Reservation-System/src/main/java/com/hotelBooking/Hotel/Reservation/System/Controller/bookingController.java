@@ -1,7 +1,8 @@
 package com.hotelBooking.Hotel.Reservation.System.Controller;
 
 import com.hotelBooking.Hotel.Reservation.System.DTO.BookingRequest;
-import com.hotelBooking.Hotel.Reservation.System.Service.BookingService;
+import com.hotelBooking.Hotel.Reservation.System.Service.Impl.BookingServiceImpl;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,9 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/bookings")
 public class bookingController {
-    private final BookingService bookingService;
+    private final BookingServiceImpl bookingService;
 
-    public bookingController(BookingService bookingService) {
+    public bookingController(BookingServiceImpl bookingService) {
         this.bookingService = bookingService;
     }
 

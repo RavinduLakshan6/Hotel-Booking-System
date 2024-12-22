@@ -1,4 +1,4 @@
-package com.hotelBooking.Hotel.Reservation.System.Service;
+package com.hotelBooking.Hotel.Reservation.System.Service.Impl;
 
 import com.hotelBooking.Hotel.Reservation.System.DTO.BookingRequest;
 import com.hotelBooking.Hotel.Reservation.System.Entity.Booking;
@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 
 @Service
-public class BookingService {
+public class BookingServiceImpl {
     private final BookingRepository bookingRepository;
     private final RoomRepository hotelRepository;
 
-    public BookingService(BookingRepository bookingRepository, RoomRepository hotelRepository) {
+    public BookingServiceImpl(BookingRepository bookingRepository, RoomRepository hotelRepository) {
         this.bookingRepository = bookingRepository;
         this.hotelRepository = hotelRepository;
     }
