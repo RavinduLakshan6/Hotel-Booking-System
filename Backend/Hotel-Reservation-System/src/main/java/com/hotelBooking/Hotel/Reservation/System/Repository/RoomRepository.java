@@ -18,6 +18,7 @@ public interface RoomRepository extends MongoRepository<Room, String> {
 
     @Query("SELECT r FROM Room r WHERE r.roomType LIKE %:roomType% AND r.id NOT IN (SELECT bk.room.id FROM Booking bk WHERE" +
             "(bk.checkInDate <= :checkOutDate) AND (bk.checkOutDate >= :checkInDate))")
+            
     List<Room> findAvailableRoomsByDatesAndTypes(LocalDate checkInDate, LocalDate checkOutDate, String roomType);
 
     List<Room> findByRoomTypeLikeAndIdNotIn(String roomType, List<String> ids);
