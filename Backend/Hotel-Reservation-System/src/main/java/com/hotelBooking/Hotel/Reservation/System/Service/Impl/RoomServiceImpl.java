@@ -12,10 +12,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.hotelBooking.Hotel.Reservation.System.DTO.Response;
 import com.hotelBooking.Hotel.Reservation.System.DTO.RoomRequest;
+import com.hotelBooking.Hotel.Reservation.System.Entity.Booking;
 import com.hotelBooking.Hotel.Reservation.System.Entity.Room;
 import com.hotelBooking.Hotel.Reservation.System.Exception.OurException;
 import com.hotelBooking.Hotel.Reservation.System.Repository.BookingRepository;
 import com.hotelBooking.Hotel.Reservation.System.Repository.RoomRepository;
+import com.hotelBooking.Hotel.Reservation.System.Service.AwsS3Service;
 import com.hotelBooking.Hotel.Reservation.System.Service.Interface.RoomService;
 import com.hotelBooking.Hotel.Reservation.System.Utils.Utils;
 
@@ -26,21 +28,18 @@ public class RoomServiceImpl implements RoomService {
     private RoomRepository roomRepository;
     @Autowired
     private BookingRepository bookingRepository;
+    @Autowired
+    private AwsS3Service awsS3Service;
 
     @Override
     public Response addNewRoom(MultipartFile photo, String roomType, BigDecimal roomPrice, String description) {
         Response response = new Response();
 
         try {
-            String imageUrl = null;
-
-            // Convert photo to Base64 string
-            if (photo != null && !photo.isEmpty()) {
-                imageUrl = Base64.getEncoder().encodeToString(photo.getBytes());
-            }
+            String imageUrl = awsS3Service.saveImageToS3(photo);
 
             Room room = new Room();
-            room.setRoomPhotoUrl(imageUrl); // Save Base64 image string
+            room.setRoomPhotoUrl(imageUrl);
             room.setRoomType(roomType);
             room.setRoomPrice(roomPrice);
             room.setRoomDescription(description);
@@ -109,7 +108,7 @@ public class RoomServiceImpl implements RoomService {
             String imageUrl = null;
 
             if (photo != null && !photo.isEmpty()) {
-                imageUrl = Base64.getEncoder().encodeToString(photo.getBytes());
+                imageUrl = awsS3Service.saveImageToS3(photo);
             }
 
             Room room = roomRepository.findById(roomId).orElseThrow(() -> new OurException("Room not found"));
@@ -161,8 +160,12 @@ public class RoomServiceImpl implements RoomService {
         Response response = new Response();
 
         try {
+            List<Booking> bookings = bookingRepository.findBookingsByDateRange(checkInDate, checkOutDate);
+            List<String> bookedRoomId = bookings.stream().map(booking -> booking.getRoom().getId()).toList();
+
             List<Room> availableRooms = roomRepository.findAvailableRoomsByDatesAndTypes(checkInDate, checkOutDate, roomType);
             List<RoomRequest> roomRequestsList = Utils.mapRoomListEntityToRoomListRequest(availableRooms);
+            
             response.setStatusCode(200);
             response.setMessage("Successful");
             response.setRoomList(roomRequestsList);
