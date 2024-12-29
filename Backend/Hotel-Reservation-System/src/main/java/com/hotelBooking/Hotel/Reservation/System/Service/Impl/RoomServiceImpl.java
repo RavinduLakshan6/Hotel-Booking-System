@@ -155,26 +155,26 @@ public class RoomServiceImpl implements RoomService {
         return response;
     }
 
-    @Override
-    public Response getAvailableRoomsByDataAndType(LocalDate checkInDate, LocalDate checkOutDate, String roomType) {
-        Response response = new Response();
-
-        try {
-            List<Booking> bookings = bookingRepository.findBookingsByDateRange(checkInDate, checkOutDate);
-            List<String> bookedRoomId = bookings.stream().map(booking -> booking.getRoom().getId()).toList();
-
-            List<Room> availableRooms = roomRepository.findAvailableRoomsByDatesAndTypes(checkInDate, checkOutDate, roomType);
-            List<RoomRequest> roomRequestsList = Utils.mapRoomListEntityToRoomListRequest(availableRooms);
-            
-            response.setStatusCode(200);
-            response.setMessage("Successful");
-            response.setRoomList(roomRequestsList);
-        } catch (Exception e) {
-            response.setStatusCode(500);
-            response.setMessage("Error retrieving available rooms: " + e.getMessage());
-        }
-        return response;
-    }
+//    @Override
+//    public Response getAvailableRoomsByDataAndType(LocalDate checkInDate, LocalDate checkOutDate, String roomType) {
+//        Response response = new Response();
+//
+//        try {
+//            List<Booking> bookings = bookingRepository.findBookingsByDateRange(checkInDate, checkOutDate);
+//            List<String> bookedRoomId = bookings.stream().map(booking -> booking.getRoom().getId()).toList();
+//
+//            List<Room> availableRooms = roomRepository.findAvailableRoomsByDatesAndTypes(checkInDate, checkOutDate, roomType);
+//            List<RoomRequest> roomRequestsList = Utils.mapRoomListEntityToRoomListRequest(availableRooms);
+//
+//            response.setStatusCode(200);
+//            response.setMessage("Successful");
+//            response.setRoomList(roomRequestsList);
+//        } catch (Exception e) {
+//            response.setStatusCode(500);
+//            response.setMessage("Error retrieving available rooms: " + e.getMessage());
+//        }
+//        return response;
+//    }
 
     @Override
     public Response getAllAvailableRooms() {

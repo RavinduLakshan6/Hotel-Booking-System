@@ -19,7 +19,7 @@ import org.springframework.beans.factory.annotation.Value;
 @Service
 public class AwsS3Service {
 
-    private final String bucketName = "hote-booking-system-images ";
+    private final String bucketName = "hotel-booking-system-images ";
 
 
     @Value("${aws.s3.access.key}")
