@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDate;
 
@@ -16,11 +16,11 @@ public class Booking {
     @Id
     private String id;
 
-    @NotBlank(message = "Check in date is required")
+    @NotNull(message = "Check in date is required")
     private LocalDate checkInDate;
 
 
-    @NotBlank(message = "Check out date is required")
+    @NotNull(message = "Check out date is required")
     private LocalDate checkOutDate;
 
     @Min(value = 1, message = "Total guests should be atleast one")
