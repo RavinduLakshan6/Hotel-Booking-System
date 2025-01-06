@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import com.hotelBooking.Hotel.Reservation.System.DTO.Response;
-
+import com.hotelBooking.Hotel.Reservation.System.Service.Impl.BookingServiceImpl;
 import com.hotelBooking.Hotel.Reservation.System.Service.Interface.RoomService;
 
 @RestController
@@ -28,10 +28,10 @@ public class RoomController {
     @Autowired
     private RoomService roomService;
     @Autowired
- //   private BookingService bookingService;
+    private BookingServiceImpl bookingService;
 
-    @PostMapping("/add")
-    @PreAuthorize("hasAuthority('ADMIN')")
+ @PostMapping("/add")
+   // @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Response> addNewRoom(
         @RequestParam(value="photo", required = false) MultipartFile photo,
         @RequestParam(value="roomType", required = false) String roomType,
@@ -47,6 +47,7 @@ public class RoomController {
         Response response = roomService.addNewRoom(photo, roomType, roomPrice, roomDescription);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
+
 
     @GetMapping("/all")
     public ResponseEntity<Response> getAllRooms(){
@@ -71,22 +72,22 @@ public class RoomController {
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
 
-    @GetMapping("/available-room-by-date-and-type")
-    public ResponseEntity<Response> getAvailableRoomsByDateAndType(
-        @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate checkInDate,
-        @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate checkOutDate,
-        @RequestParam(required = false) String roomType
-    ) {
-        if( checkInDate == null || roomType == null || roomType.isBlank() || checkOutDate == null){
-            Response response = new Response();
-            response.setStatusCode(400);
-            response.setMessage("Please provide values for all fields");
-            return ResponseEntity.status(response.getStatusCode()).body(response);
-        }
-
-        Response response = roomService.getAvailableRoomsByDataAndType(checkInDate, checkOutDate, roomType);
-        return ResponseEntity.status(response.getStatusCode()).body(response);
-    }
+//    @GetMapping("/available-room-by-date-and-type")
+//    public ResponseEntity<Response> getAvailableRoomsByDateAndType(
+//        @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate checkInDate,
+//        @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate checkOutDate,
+//        @RequestParam(required = false) String roomType
+//    ) {
+//        if( checkInDate == null || roomType == null || roomType.isBlank() || checkOutDate == null){
+//            Response response = new Response();
+//            response.setStatusCode(400);
+//            response.setMessage("Please provide values for all fields");
+//            return ResponseEntity.status(response.getStatusCode()).body(response);
+//        }
+//
+//        Response response = roomService.getAvailableRoomsByDataAndType(checkInDate, checkOutDate, roomType);
+//        return ResponseEntity.status(response.getStatusCode()).body(response);
+//    }
 
     @PutMapping("/update/{roomId}")
     @PreAuthorize("hasAuthority('ADMIN')")
