@@ -13,6 +13,7 @@ import java.util.List;
 
 @Data
 public class Room {
+    
     @Id
     private String id;
 

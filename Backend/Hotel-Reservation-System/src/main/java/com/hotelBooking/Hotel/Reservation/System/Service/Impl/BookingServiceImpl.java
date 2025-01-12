@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -74,29 +73,29 @@ public class BookingServiceImpl implements BookingService {
     }
 
 
-//    @Override
-//    public Response findBookingByConfirmationCode(String confirmationCode) {
-//
-//        Response response = new Response();
-//
-//        try {
-//            Booking booking = bookingRepository.findByBookingConfirmationCode(confirmationCode).orElseThrow(() -> new OurException("Booking Not Found"));
-//            BookingRequest bookingRequest = Utils.mapBookingEntityToBookingRequestPlusBookedRooms(booking, true);
-//            response.setStatusCode(200);
-//            response.setMessage("successful");
-//            response.setBooking(bookingRequest);
-//
-//        } catch (OurException e) {
-//            response.setStatusCode(404);
-//            response.setMessage(e.getMessage());
-//
-//        } catch (Exception e) {
-//            response.setStatusCode(500);
-//            response.setMessage("Error Finding a booking: " + e.getMessage());
-//
-//        }
-//        return response;
-//    }
+   @Override
+   public Response findBookingByConfirmationCode(String confirmationCode) {
+
+       Response response = new Response();
+
+       try {
+           Booking booking = bookingRepository.findByBookingConfirmationCode(confirmationCode).orElseThrow(() -> new OurException("Booking Not Found"));
+           BookingRequest bookingRequest = Utils.mapBookingEntityToBookingRequestPlusBookedRooms(booking, true);
+           response.setStatusCode(200);
+           response.setMessage("successful");
+           response.setBooking(bookingRequest);
+
+       } catch (OurException e) {
+           response.setStatusCode(404);
+           response.setMessage(e.getMessage());
+
+       } catch (Exception e) {
+           response.setStatusCode(500);
+           response.setMessage("Error Finding a booking: " + e.getMessage());
+
+       }
+       return response;
+   }
 
     @Override
     public Response getAllBookings() {

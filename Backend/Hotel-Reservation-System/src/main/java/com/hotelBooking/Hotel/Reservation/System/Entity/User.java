@@ -16,13 +16,22 @@ import java.util.List;
 @Data
 @Document(collection = "users")
 public class User implements UserDetails {
+
     @Id
     private String id;
+
     @NotBlank(message = "Please Enter Email")
     private String email;
+
+    @NotBlank(message = "Please Enter Name")
     private String name;
+
+    @NotBlank(message = "Please Enter Phone Number")
     private String phoneNumber;
+
+    @NotBlank(message = "Please Enter Password")
     private String password;
+
     private String role;
 
     @DBRef
@@ -58,15 +67,4 @@ public class User implements UserDetails {
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id='" + id + '\'' +
-                ", email='" + email + '\'' +
-                ", name='" + name + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", password='" + password + '\'' +
-                ", role='" + role + '\'' +
-                '}';
-    }
 }
