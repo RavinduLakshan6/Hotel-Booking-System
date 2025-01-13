@@ -1,30 +1,24 @@
 import './App.css';
-import { Route , Routes } from 'react-router-dom';
-import Home from './Pages/Home';
-import About from './Pages/About';
-import Room from './Pages/Room';
-import Review from './Pages/Review';
-import AdminRoom from './Pages/AdminRoom';
-import AdminBooking from './Pages/AdminBooking';
+import React from 'react';
+import { BrowserRouter,Routes, Route,Navigate } from 'react-router-dom';
+import HomePage from './Components/Home/HomePage';
+
 
 function App() {
   return (
+    <BrowserRouter>
+    <div className="App">
+     <Navbar/>
+     <div className='content'>
+      <Routes>
+        <Route exact path='/home' element={<HomePage/>}/>
+      </Routes>
+      </div> 
+      <FooterComponent/>
 
-    <div>
-    
-    <Routes>
-      <Route path="/" element={<Home/>} />
-      <Route path="/about" element={<About/>} />
-      <Route path="/room" element={<Room/>} />
-      <Route path="/review" element={<Review/>} />
-
-      <Route path="/adminroom" element={<AdminRoom/>} />
-      <Route path="/adminbooking" element={<AdminBooking/>} />
-    </Routes>
-    
-
-    </div>
-
+      </div>
+      </BrowserRouter>
+   
   );
 }
 
