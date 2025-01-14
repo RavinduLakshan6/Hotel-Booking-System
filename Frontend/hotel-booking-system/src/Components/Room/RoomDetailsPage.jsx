@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import {useParams, useNavigate} from 'react-router-dom';
 import ApiService from '../../Service/ApiService';
 import DatePicker from 'react-datepicker';
-import { setTime } from "react-datepicker/dist/date_utils";
+// import { setTime } from "react-datepicker/dist/date_utils";
 
 
 const RoomDetailsPage = () => {
@@ -87,7 +87,7 @@ const RoomDetailsPage = () => {
             const booking = {
                 checkInDate: formattedCheckInDate,
                 checkOutDate: formattedCheckOutDate,
-                totalOfGuests: totalGuests
+                totalGuests: totalGuests
             };
             console.log(booking);
             console.log(checkOutDate);
