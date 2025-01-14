@@ -36,11 +36,11 @@ public class BookingController {
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
 
-   @GetMapping("/get-by-confirmation-code/{confirmationCode}")
-   public ResponseEntity<Response> getBookingByConfirmationCode(@PathVariable String confirmationCode) {
-       Response response = bookingService.findBookingByConfirmationCode(confirmationCode);
-       return ResponseEntity.status(response.getStatusCode()).body(response);
-   }
+//   @GetMapping("/get-by-confirmation-code/{confirmationCode}")
+//   public ResponseEntity<Response> getBookingByConfirmationCode(@PathVariable String confirmationCode) {
+//       Response response = bookingService.findBookingByConfirmationCode(confirmationCode);
+//       return ResponseEntity.status(response.getStatusCode()).body(response);
+//   }
 
     @DeleteMapping("/cancel/{bookingId}")
     @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')")

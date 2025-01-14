@@ -16,7 +16,7 @@ import java.util.Optional;
 public interface BookingRepository extends MongoRepository<Booking, String> {
 
 
-  Optional<Booking>findByBookingConfirmationCode(String confirmationCode);
+  //Optional<Booking>findByBookingConfirmationCode(String confirmationCode);
 
    @Query("{ 'checkInDate': { $lte: ?1}, 'checkOutDate': { $gte: ?0} }")
    List<Booking> findBookingsByDateRange(LocalDate checkInDate, LocalDate checkOutDate);
