@@ -16,7 +16,7 @@ export default function Navbar() {
       ApiService.logout();
       navigate("/home");
     }
-  }
+  };
 
   return (
 
@@ -31,14 +31,19 @@ export default function Navbar() {
               <li><NavLink to="/Review" activeClass="active">Reviews</NavLink></li>
               <li><NavLink to="/about" activeClass="active">About</NavLink></li>
 
-              { isUser && <li><NavLink to="/profile" activeClass="active">Profile</NavLink></li>}
-              { isAdmin && <li><NavLink to="/admin" activeClass="active">Admin</NavLink></li>}
+              { isUser && <li><NavLink to="/profile" activeClass="active" className="btn">Profile</NavLink></li>}
+              { isAdmin && <li><NavLink to="/admin" activeClass="active" className="btn">Admin</NavLink></li>}
 
-              { !isAuthenticated && <li><NavLink to="/login" activeClass="active">Login</NavLink></li>}
-              { !isAuthenticated && <li><NavLink to="/register" activeClass="active">Register</NavLink></li>}
+              {/* { !isAuthenticated && <li><NavLink to="/login" activeClass="active" className="btn">Login</NavLink></li>} */}
+              {/* { !isAuthenticated && <li><NavLink to="/register" activeClass="active" className="btn">Register</NavLink></li>} */}
 
               { isAuthenticated && <li onClick={handleLogout}>Logout</li>}
             </ul>
+
+            <div>
+              { !isAuthenticated && <button><NavLink to="/login" activeClass="active" className="btn">Login</NavLink></button>}
+              { !isAuthenticated && <button><NavLink to="/register" activeClass="active" className="btn">Register</NavLink></button>}
+            </div>
 
             {/* <ul>
                 <li><a href="/">Home</a></li>
@@ -52,5 +57,5 @@ export default function Navbar() {
                 <button className="regBtn">Register</button>    
             </div>    */}
     </div>
-  )
+  );
 }
