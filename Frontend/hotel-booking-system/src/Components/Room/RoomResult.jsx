@@ -1,9 +1,9 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import ApiService from '../../Service/ApiService';
 
 const RoomResult = ({ roomSearchResults }) => {
-    const navigate = useNavigate(); // Initialize useNavigate hook
+    const navigate = useNavigate(); 
     const isAdmin = ApiService.isAdmin();
     return (
         <section className="room-results">
@@ -11,6 +11,7 @@ const RoomResult = ({ roomSearchResults }) => {
                 <div className="room-list">
                     {roomSearchResults.map(room => (
                         <div key={room.id} className="room-list-item">
+
                             <img className='room-list-item-image' src={room.roomPhotoUrl} alt={room.roomType} />
                             <div className="room-details">
                                 <h3>{room.roomType}</h3>
@@ -22,14 +23,14 @@ const RoomResult = ({ roomSearchResults }) => {
                                 {isAdmin ? (
                                     <button
                                         className="edit-room-button"
-                                        onClick={() => navigate(`/admin/edit-room/${room.id}`)} // Navigate to edit room with room ID
+                                        onClick={() => navigate(`/admin/edit-room/${room.id}`)} 
                                     >
                                         Edit Room
                                     </button>
                                 ) : (
                                     <button
                                         className="book-now-button"
-                                        onClick={() => navigate(`/room-details-book/${room.id}`)} // Navigate to book room with room ID
+                                        onClick={() => navigate(`/room-details-book/${room.id}`)}
                                     >
                                         View/Book Now
                                     </button>
