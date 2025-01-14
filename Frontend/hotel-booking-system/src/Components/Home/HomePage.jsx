@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import RoomResult from "../common/RoomResult";
-import RoomSearch from "../common/RoomSearch";
+import RoomSearch from "../Room/RoomSearch";
+import RoomResult from "../Room/RoomResult";
+
 
 
 
