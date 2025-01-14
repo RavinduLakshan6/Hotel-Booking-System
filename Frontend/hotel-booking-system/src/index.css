@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: #666;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -56,6 +56,69 @@
 /**LOGIN CSS END HERE*/
 
 
+
+
+/**NAVIGATION BAR STYELS*/
+
+.nav{
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 12%;
+  top: 0;
+  z-index: 99;
+  position: fixed;
+  background-color: #fff;
+}
+
+.nav .logo a{
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 600;
+  color: black;
+}
+
+.nav .logo a span{
+  color: green;
+}
+
+.nav ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li{
+  display: inline-block;
+  margin: 0 15px;
+  transition-duration: 0.5s;
+}
+
+.nav ul li:hover{
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
+
+.nav ul li a{
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.btn{
+  text-decoration: none;
+  color: #fff !important;
+  /* background: #1F51FF; #4169E1 */
+  font-weight: 500;
+}
+
+
+
+
 /**REGISTRATION PAGE START HERE STYLING*/
 
 
@@ -93,22 +156,8 @@ button[type="submit"]:hover {
 
 /**REGISTRATION PAGE END HERE*/
 
-/**NAV BAR STYLING START HERE*/
-/* NAVBAR STYLING */
 
-
-
-.link-button {
-  background-color: #007F86;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  text-decoration: none;
-}
-
-/**NAV BAR STYLING END HERE*/
-
-/* FOOTER STYKLING */
+/* FOOTER STYLING */
 .my-footer {
   color: #f0e8e8;
   background-color: #444;
@@ -626,17 +675,19 @@ button[type="submit"]:hover {
 }
 
 button {
+  margin: 5px;
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #007F86;
+  background-color: green;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 button:hover {
-  background-color: rgb(34, 80, 128);
+  background-color: darkgreen;
 }
 
 .booking-details {
@@ -1132,15 +1183,15 @@ h2 {
 
   /*Navbar*/
 
-  .navbar {
+  .nav {
       padding: 5px 10px 5px 10px;
   }
 
-  .navbar-ul {
+  .nav-ul {
       justify-content: space-between;
   }
 
-  .navbar-ul li {
+  .nav-ul li {
       flex: 1 1 22%;
       /* Adjust to fit 4 items per row */
       margin-left: 0;
@@ -1148,7 +1199,7 @@ h2 {
       text-align: center;
   }
 
-  .navbar-ul li a {
+  .nav-ul li NavLink {
       display: block;
   }
 
