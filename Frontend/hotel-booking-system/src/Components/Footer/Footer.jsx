@@ -1,5 +1,6 @@
 import React from 'react'
 import './FooterStyle.css';
+import 'boxicons';
 
 export default function Footer() {
   return (
@@ -12,13 +13,13 @@ export default function Footer() {
 
             <div>
                 <a href="/">
-                <i className="fa-brands fa-facebook-square"></i></a>
+                <i class='bx bxl-facebook'></i></a>
 
                 <a href="/">
-                <i className="fa-brands fa-instagram-square"></i></a>
+                <i class='bx bxl-instagram' ></i></a>
 
                 <a href="/">
-                <i className="fa-brands fa-twitter-square"></i></a>
+                <i class='bx bxl-twitter' ></i></a>
             </div>
         </div>
 
@@ -53,6 +54,12 @@ export default function Footer() {
                 <a href="/">License</a>
             </div>
         </div>
+
+        <hr />
+
+        <div className="footer-copyright">
+            Group 06 | All Right Reserved &copy; {new Date().getFullYear()}
+        </div>
     </div>
-  )
-}
+  );
+};
