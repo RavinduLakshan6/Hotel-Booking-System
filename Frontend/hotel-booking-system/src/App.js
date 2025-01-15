@@ -12,6 +12,7 @@ import RegisterPage from './Components/Auth/RegisterPage';
 import FooterComponent from './Components/Footer/FooterComponent';
 import { ProtectedRoute, AdminROute } from './Service/guard';
 
+
 function App() {
   return (
     <BrowserRouter>
