@@ -3,13 +3,13 @@ import React from 'react';
 import { BrowserRouter,Routes, Route,Navigate } from 'react-router-dom';
 import HomePage from './Components/Home/HomePage';
 import Navbar from './Components/Navigation-Bar/Navbar';
-import Footer from './Components/Footer/Footer';
 import AllRoomsPage from './Components/Room/AllRoomsPage';
 import RoomDetailsPage from './Components/Room/RoomDetailsPage';
 import ProfilePage from './Components/Profile/ProfilePage';
 import EditProfilePage from './Components/Profile/EditProfilePage';
 import LoginPage from './Components/Auth/LoginPage';
 import RegisterPage from './Components/Auth/RegisterPage';
+import FooterComponent from './Components/Footer/FooterComponent';
 import { ProtectedRoute, AdminROute } from './Service/guard';
 
 function App() {
@@ -21,8 +21,8 @@ function App() {
       <Routes>
 
         <Route exact path='/home' element={<HomePage/>}/>
-        <Route exact path='/rooms' element={<AllRoomsPage/>}/>
-        <Route path='/login' element={<LoginPage/>}/>
+        <Route path='/rooms' element={<AllRoomsPage/>}/>
+        <Route exact path='/login' element={<LoginPage/>}/>
         <Route path='/register' element={<RegisterPage/>}/>
 
 
@@ -36,7 +36,8 @@ function App() {
 
       </Routes>
       </div> 
-      <Footer/>
+
+      <FooterComponent />
 
       </div>
       </BrowserRouter>

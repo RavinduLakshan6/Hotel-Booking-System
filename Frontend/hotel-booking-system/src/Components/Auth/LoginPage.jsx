@@ -31,6 +31,7 @@ function LoginPage() {
             setError(error.response?.data?.message || error.message);
             setTimeout(() => setError(''), 5000);
         } 
+    };   
         return (
             <div className="auth-container">
                 <h2>Login</h2>
@@ -62,9 +63,6 @@ function LoginPage() {
                 </p>
             </div>
         );
-        
-    };
-
     
 }
 

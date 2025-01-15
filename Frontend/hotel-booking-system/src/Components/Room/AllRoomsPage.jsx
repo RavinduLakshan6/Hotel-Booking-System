@@ -3,6 +3,7 @@ import ApiService from '../../Service/ApiService';
 import Pagination from '../Pagination/Pagination';
 import RoomResult from '../Room/RoomResult';
 import RoomSearch from '../Room/RoomSearch';
+import Footer from '../Footer/Footer';
 
 
 const AllRoomsPage = () => {
@@ -92,7 +93,10 @@ const AllRoomsPage = () => {
                 currentPage={currentPage}
                 paginate={paginate}
             />
+
+            <Footer />
         </div>
+
     );
 
 };
