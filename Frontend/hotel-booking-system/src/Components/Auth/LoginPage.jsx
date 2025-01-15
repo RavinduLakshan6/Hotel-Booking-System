@@ -20,7 +20,17 @@ function LoginPage() {
             setTimeout(() => setError(''), 5000);
             return;
         }
-
+        try {
+            const response = await ApiService.loginUser({email, password});
+            if (response.statusCode === 200) {
+                localStorage.setItem('token', response.token);
+                localStorage.setItem('role', response.role);
+                navigate(from, { replace: true });
+            }
+        } catch (error) {
+            setError(error.response?.data?.message || error.message);
+            setTimeout(() => setError(''), 5000);
+        }
         
     };
 
