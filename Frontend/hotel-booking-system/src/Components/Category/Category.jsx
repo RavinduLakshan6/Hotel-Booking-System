@@ -1,5 +1,6 @@
 import React from 'react'
 import CategoryData from './CategoryData';
+import { NavLink } from 'react-router-dom';
 import './CategoryStyle.css';
 import cat1 from '../../Assets/bg1.jpg';
 import cat2 from '../../Assets/bg2.jpg';
@@ -32,6 +33,8 @@ export default function Category() {
         />
 
     </div>
+
+    <button className='cat-btn'><NavLink to="/rooms">More Categories</NavLink></button>
 
     </div>
   )

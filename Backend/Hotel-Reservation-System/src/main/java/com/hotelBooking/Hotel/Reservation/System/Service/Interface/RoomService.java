@@ -21,7 +21,7 @@ public interface RoomService {
 
     Response getRoomById(String roomId);
 
-    //Response getAvailableRoomsByDataAndType(LocalDate checkInDate, LocalDate checkOutDate, String roomType);
+    Response getAvailableRoomsByDateAndType(LocalDate checkInDate, LocalDate checkOutDate, String roomType);
 
     Response getAllAvailableRooms();
 }

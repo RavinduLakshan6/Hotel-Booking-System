@@ -3,17 +3,13 @@ package com.hotelBooking.Hotel.Reservation.System.Controller;
 import java.security.Principal;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.couchbase.CouchbaseProperties.Authentication;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.hotelBooking.Hotel.Reservation.System.DTO.Response;
 import com.hotelBooking.Hotel.Reservation.System.Service.Interface.UserService;
+import org.springframework.security.core.Authentication;
 
 
 @RestController
@@ -45,7 +41,7 @@ public class UserController {
 
     @GetMapping("/get-logged-in-profile-info")
     public ResponseEntity<Response> getLoggedInUserProfile(){
-        Authentication authentication = (Authentication) SecurityContextHolder.getContext().getAuthentication();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email = ((Principal) authentication).getName();
         Response response = userService.getMyInfo(email);
         return ResponseEntity.status(response.getStatusCode()).body(response);    

@@ -6,7 +6,7 @@ import com.hotelBooking.Hotel.Reservation.System.Entity.Booking;
 public interface BookingService {
     Response saveBooking(String roomId, String userId, Booking bookingRequest);
 
-   // Response findBookingByConfirmationCode(String confirmationCode);
+    //Response findBookingByConfirmationCode(String confirmationCode);
 
     Response getAllBookings();
 

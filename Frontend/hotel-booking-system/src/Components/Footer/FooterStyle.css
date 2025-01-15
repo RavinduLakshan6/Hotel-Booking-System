@@ -12,6 +12,14 @@
     flex-wrap: wrap;
 }
 
+.top h1,p{
+    color: #fff;
+}
+
+.top a{
+    color: #fff;
+}
+
 .top i{
     color: #fff;
     font-size: 2rem;
@@ -28,6 +36,10 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.bottom h4{
+    color: #fff;
 }
 
 .bottom div{

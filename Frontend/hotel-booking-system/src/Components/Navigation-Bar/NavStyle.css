@@ -1,3 +1,4 @@
+/*
 .nav{
     height: 80px;
     width: 100%;
@@ -12,13 +13,20 @@
 }
 
 .nav .logo a{
+    text-decoration: none;
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 600;
     color: black;
 }
 
 .nav .logo a span{
     color: green;
+}
+
+.nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav ul li{
@@ -28,49 +36,22 @@
 }
 
 .nav ul li:hover{
-    transform: scale(1.15);
+    transform: scale(1.1);
     transition: all 0.2s ease-in-out;
 }
 
 
 .nav ul li a{
+    text-decoration: none;
     color: black;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
 }
 
-.regBtn{
-    color: white;
-    background-color: green;
+.btn{
+    text-decoration: none;
+    color: #fff !important;
+    /* background: #1F51FF; #4169E1 
+    font-weight: 500;
 }
-
-.loginBtn{
-    color: white;
-    background-color: green;
-}
-
-.regBtn:hover{
-    transform: scale(1.1);
-}
-
-.loginBtn:hover{
-    transform: scale(1.1);
-}
-
-.profileBtn{
-    color: white;
-    background-color: green;
-}
-
-.profileBtn:hover{
-    transform: scale(1.1);
-}
-
-.logoutBtn{
-    color: white;
-    background-color: green;
-}
-
-.logoutBtn:hover{
-    transform: scale(1.1);
-}
+*/

@@ -1,12 +1,12 @@
-import React from 'react'
-import NavAdmin from '../Components/Navigation-Bar/NavAdmin';
+// import React from 'react'
+// import NavAdmin from '../Components/Navigation-Bar/NavAdmin';
 
-export default function adminRoom() {
-  return (
-    <div>
+// export default function adminRoom() {
+//   return (
+//     <div>
 
-        <NavAdmin/>
+//         <NavAdmin/>
 
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
