@@ -13,27 +13,33 @@ hr{
 }
 
 .auth-container {
-  max-width: 400px;
+  max-width: 600px;
   padding: 20px;
-  border: 0.5px solid #ccc;
+  border: 2px solid darkgreen;
   border-radius: 5px;
   background-color: #fff;
-  margin: 20px auto 50px auto;
+  margin: 120px auto 50px;
 }
 
 .auth-container h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #007F86;
+  color: green;
+}
+
+form{
+  text-align: center;
 }
 
 .register-link {
   margin-top: 20px;
   font-size: 13px;
+  color: black;
+  text-align: center;
 }
 
 .register-link a {
-  color: #007F86;
+  color: green;
   text-decoration: none;
 }
 
@@ -44,6 +50,8 @@ hr{
 .form-group label {
   display: block;
   font-weight: bold;
+  text-align: start;
+  margin-left: 30px;
 }
 
 
@@ -109,6 +117,12 @@ hr{
   /* background: #1F51FF; #4169E1 */
   font-weight: 500;
   width: 110px;
+
+}
+
+.btn a{
+  text-decoration: none;
+  color: #fff !important;
 }
 
 .btn a{
@@ -120,8 +134,6 @@ hr{
 
 
 /**REGISTRATION PAGE START HERE STYLING*/
-
-
 
 .form-group label {
   display: block;
@@ -139,10 +151,10 @@ hr{
 button[type="submit"] {
   width: 95%;
   padding: 12px;
-  background-color: #007F86;
+  background-color: green;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-weight: 800;
@@ -157,14 +169,35 @@ button[type="submit"]:hover {
 /**REGISTRATION PAGE END HERE*/
 
 
+
+/* FOOTER COMPONENT STYLING */
+
+.footer-copyright {
+  color: #fff;
+  background-color: #000;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-weight: 500;
+}
 /* FOOTER STYLING */
 
 
+.footer-text{
+  color: #fff;
+  opacity: 0.4;
+}
 
 /*HOME PAGE STYLING STARTS HERE*/
 
 .home {
-  margin-bottom: 100px;
+  margin-bottom: 0px;
+}
+
+span{
+  color: red;
 }
 
 span{
@@ -326,7 +359,7 @@ span{
 }
 
 .book-now-button {
-  background-color: #007F86;
+  background-color: green;
   color: white;
   border: none;
   margin-right: 10px;
@@ -362,7 +395,7 @@ span{
 }
 
 .service-section {
-  margin: 0px 60px;
+  margin: 0px 60px 100px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -406,6 +439,8 @@ span{
 /*ALL ROOMS PAGE STYLING START*/
 
 .all-rooms {
+
+  margin: 100px 0px 0px 0px;
   margin: 100px 0px 90px 0px;
 }
 
@@ -451,6 +486,7 @@ span{
 
 /*ALL ROOMS PAGE STYLING ENDS*/
 
+
 /* FOOTER STYLES*/
 .footer-copyright {
   color: #fff;
@@ -459,6 +495,7 @@ span{
   width: 100%;
   opacity: 0.2;
 }
+
 
 /*PAGINATION COMPONENT STYLIMNG STARTS HERE*/
 
@@ -497,7 +534,7 @@ span{
 
 /* Style for the current page button */
 .current-page {
-  background-color: #007F86;
+  background-color: green;
   color: #fff;
 }
 
@@ -526,7 +563,7 @@ span{
 }
 
 .book-now-button {
-  background-color: #007F86;
+  background-color: green;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -584,7 +621,7 @@ span{
 }
 
 .confirm-booking {
-  background-color: #007F86;
+  background-color: green;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -615,7 +652,7 @@ span{
 }
 
 .confirm-booking {
-  background-color: #007F86;
+  background-color: green;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -625,7 +662,7 @@ span{
 }
 
 .confirm-booking:hover {
-  background-color: rgb(34, 80, 128);
+  background-color: darkgreen;
 }
 
 .booking-success-message {
@@ -746,7 +783,7 @@ p {
 
 /* ROOM SEARCH RESULT */
 .book-now-button {
-  background-color: #007F86;
+  background-color: green;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -785,7 +822,7 @@ p {
 .edit-room-container h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #007F86;
+  color: green;
 }
 
 .error-message {
@@ -982,11 +1019,11 @@ h2 {
 .profile-page h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #007F86;
+  color: green;
 }
 
 .profile-page h3 {
-  color: #007F86;
+  color: green;
 }
 
 .profile-actions {
@@ -997,7 +1034,7 @@ h2 {
 }
 
 .profile-actions button {
-  background-color: #007F86;
+  background-color: green;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -1007,7 +1044,7 @@ h2 {
 }
 
 .profile-actions button:hover {
-  background-color: rgb(34, 80, 128);
+  background-color: darkgreen;
 }
 
 .profile-details,
@@ -1062,7 +1099,7 @@ h2 {
 .edit-profile-page h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #007F86;
+  color: green;
 }
 
 .profile-details {
@@ -1128,7 +1165,7 @@ h2 {
 
   .auth-container h2 {
       font-size: 24px;
-      color: #007F86;
+      color: green;
   }
 
   .form-group input {

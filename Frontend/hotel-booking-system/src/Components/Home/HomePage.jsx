@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import RoomSearch from "../Room/RoomSearch";
 import RoomResult from "../Room/RoomResult";
 import Category from '../Category/Category';
+import Footer from '../Footer/Footer';
 import AcImg from '../../Assets/ac.png';
 import MiniBarImg from '../../Assets/mini-bar.png';
 import ParkingImg from '../../Assets/parking.png';
@@ -81,6 +82,8 @@ const HomePage = () => {
             <section>
 
             </section>
+
+            <Footer />
         </div>
     );
 };
