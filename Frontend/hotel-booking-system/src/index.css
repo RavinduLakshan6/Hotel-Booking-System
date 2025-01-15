@@ -1,21 +1,15 @@
 * {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  color: #666;
+  color: #333;
   box-sizing: border-box;
   overflow-x: hidden;
 }
 
-
-.colors {
-  color: pink;
-  color: #FF007F;
-  color: #CC0066;
-  color: #319055;
-  color: #003366;
-  color: #36454F;
-  color: #007F86;
-  color: #007F86;
+hr{
+  opacity: 0.1;
+  width: 100%;
+  margin: 40px auto 10px;
 }
 
 .auth-container {
@@ -71,6 +65,7 @@
   z-index: 99;
   position: fixed;
   background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav .logo a{
@@ -78,6 +73,7 @@
   font-size: 24px;
   font-weight: 600;
   color: black;
+  text-shadow: 0 2px rgba(0, 0, 0, 0.2);
 }
 
 .nav .logo a span{
@@ -110,10 +106,14 @@
 }
 
 .btn{
-  text-decoration: none;
-  color: #fff !important;
   /* background: #1F51FF; #4169E1 */
   font-weight: 500;
+  width: 110px;
+}
+
+.btn a{
+  text-decoration: none;
+  color: #fff !important;
 }
 
 
@@ -150,7 +150,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: rgb(34, 80, 128)
+  background-color: darkgreen;
 }
 
 
@@ -158,16 +158,6 @@ button[type="submit"]:hover {
 
 
 /* FOOTER STYLING */
-.my-footer {
-  color: #f0e8e8;
-  background-color: #444;
-  padding: 20px;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  font-weight: 500;
-}
 
 
 
@@ -175,6 +165,10 @@ button[type="submit"]:hover {
 
 .home {
   margin-bottom: 100px;
+}
+
+span{
+  color: red;
 }
 
 /* HEADER */
@@ -191,29 +185,28 @@ button[type="submit"]:hover {
 
 .overlay-content {
   position: absolute;
+  text-align: center;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 30%;
+  transform: translate(-20%, -50%);
   color: #fff;
   justify-content: flex-start;
 }
 
 /* The header banner */
 .header-banner {
-  /* background-image: url("../public/assets/images/hotel.webp"); */
+  background-image: url("./Assets/bg1.jpg");
   background-size: cover;
   background-position: center;
-  position: relative;
-  height: 80vh;
 }
 
 .header-banner {
   position: relative;
-  height: 500px;
+  height: 600px;
 }
 
 .header-banner h1 {
-  font-size: 50px;
+  font-size: 60px;
   color: #f8f3f3;
 }
 
@@ -228,11 +221,9 @@ button[type="submit"]:hover {
 .search-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
   padding: 20px;
-  margin-left: 45px;
 }
 
 
@@ -262,11 +253,15 @@ button[type="submit"]:hover {
   font-size: 16px;
 }
 
+.search-field select{
+  margin-bottom: 13px;
+}
+
 
 .home-search-button {
   margin-left: 10px;
   padding: 15px 20px;
-  background-color: #007F86;
+  background-color: green;
   font-weight: 600;
   color: #fff;
   border: none;
@@ -277,7 +272,7 @@ button[type="submit"]:hover {
 }
 
 .home-search-button:hover {
-  background-color: rgb(34, 80, 128)
+  background-color: darkgreen;
 }
 
 
@@ -343,7 +338,7 @@ button[type="submit"]:hover {
 }
 
 .book-now-button:hover {
-  background-color: rgb(34, 80, 128)
+  background-color: darkgreen;
 }
 
 /*View all rooms home section*/
@@ -353,21 +348,17 @@ button[type="submit"]:hover {
   font-weight: 500;
   text-decoration: underline;
   color: #FF7F50;
-
 }
 
 
 /*Home services section*/
 .home-services {
   font-weight: 800;
-  color: #007F86;
+  color: green;
   text-align: center;
   margin: 5px auto 30px auto;
-}
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
 
-.phegon-color {
-  color: #FF007F;
-  color: #FF7F50;
 }
 
 .service-section {
@@ -380,16 +371,16 @@ button[type="submit"]:hover {
   flex: 1 1 45%;
   /* Two cards on one row, adjust width as needed */
   margin: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  border: 2px solid darkgreen;
+  border-radius: 10px;
   padding: 15px;
   display: flex;
 }
 
 .service-card img {
-  width: 50px;
+  width: 100px;
   /* Adjust size of icon */
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .service-details {
@@ -397,17 +388,16 @@ button[type="submit"]:hover {
 }
 
 .service-title {
-  font-size: 18px;
+  font-size: 22px;
   margin-bottom: 5px;
-  font-weight: 900;
-  color: #007F86;
+  font-weight: 800;
+  color: darkgreen;
 }
 
 .service-description {
-  color: #444;
+  color: #333;
+  font-size: 16px;
 }
-
-
 
 
 /*HOME PAGE STYLING ENDS HERE*/
@@ -416,21 +406,22 @@ button[type="submit"]:hover {
 /*ALL ROOMS PAGE STYLING START*/
 
 .all-rooms {
-  margin: 50px 0px 90px 0px;
+  margin: 100px 0px 90px 0px;
 }
 
 .all-rooms h2 {
   text-align: center;
   margin-bottom: 20px;
-  color: #007F86;
+  color: green;
 }
 
 .all-room-filter-div {
-  margin-left: 5rem;
+  margin-left: 100px;
 }
 
 .all-room-filter-div label {
-  color: #007F86;
+  color: green;
+  margin-right: 20px;
 }
 
 .filter-select-div {
@@ -458,11 +449,16 @@ button[type="submit"]:hover {
   font-size: 16px;
 }
 
-
-
-
-
 /*ALL ROOMS PAGE STYLING ENDS*/
+
+/* FOOTER STYLES*/
+.footer-copyright {
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  opacity: 0.2;
+}
 
 /*PAGINATION COMPONENT STYLIMNG STARTS HERE*/
 
@@ -486,8 +482,8 @@ button[type="submit"]:hover {
 
 .pagination-button {
   background-color: #fff;
-  color: #007F86;
-  border: 1px solid #007F86;
+  color: green;
+  border: 1px solid green;
   border-radius: 5px;
   padding: 8px 12px;
   cursor: pointer;
@@ -495,7 +491,7 @@ button[type="submit"]:hover {
 }
 
 .pagination-button:hover {
-  background-color: rgb(34, 80, 128);
+  background-color: darkgreen;
   color: #fff;
 }
 
@@ -539,7 +535,7 @@ button[type="submit"]:hover {
 }
 
 .book-now-button:hover {
-  background-color: rgb(34, 80, 128);
+  background-color: darkgreen;
 }
 
 
@@ -734,7 +730,7 @@ p {
   padding: 15px 30px;
   font-size: 1em;
   color: white;
-  background-color: #007F86;
+  background-color: green;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -743,7 +739,7 @@ p {
 }
 
 .admin-button:hover {
-  background-color: rgb(34, 80, 128);
+  background-color: darkgreen;
 }
 
 
@@ -881,8 +877,8 @@ p {
 h2 {
   text-align: center;
   margin-bottom: 20px;
-  font-size: 2em;
-  color: #007F86;
+  font-size: 60px;
+  color: green;
 }
 
 .search-div {
@@ -1199,7 +1195,7 @@ h2 {
       text-align: center;
   }
 
-  .nav-ul li NavLink {
+  .nav-ul li a {
       display: block;
   }
 

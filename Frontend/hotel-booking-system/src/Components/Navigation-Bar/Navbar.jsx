@@ -27,7 +27,7 @@ export default function Navbar() {
 
             <ul>
               <li><NavLink to="/home" activeClass="active">Home</NavLink></li>
-              <li><NavLink to="/room" activeClass="active">Rooms</NavLink></li>
+              <li><NavLink to="/rooms" activeClass="active">Rooms</NavLink></li>
               <li><NavLink to="/Review" activeClass="active">Reviews</NavLink></li>
               <li><NavLink to="/about" activeClass="active">About</NavLink></li>
 
@@ -41,8 +41,8 @@ export default function Navbar() {
             </ul>
 
             <div>
-              { !isAuthenticated && <button><NavLink to="/login" activeClass="active" className="btn">Login</NavLink></button>}
-              { !isAuthenticated && <button><NavLink to="/register" activeClass="active" className="btn">Register</NavLink></button>}
+              { !isAuthenticated && <button className="btn"><NavLink to="/login" activeClass="active">Login</NavLink></button>}
+              { !isAuthenticated && <button className="btn"><NavLink to="/register" activeClass="active">Register</NavLink></button>}
             </div>
 
             {/* <ul>

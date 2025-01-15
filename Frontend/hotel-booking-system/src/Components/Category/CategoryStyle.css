@@ -1,25 +1,35 @@
 .category{
-    margin: 4rem 6rem;
-    color: #2a2a2a;
+    margin: 20px 80px;
+    background-color: #fff;
     text-align: center;
 }
 
 .category h1{
-    font-size: 64px;
+    font-size: 60px;
+    color: green;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.category p{
+    color: black;
 }
 
 .cat-card{
+    background-color: white;
     margin-top: 3rem;
+    margin-bottom: 2rem;
+    padding: 5px;
     display: flex;
     justify-content: space-between;
 }
 
 .cat-block{
     width: 32%;
-    box-shadow: 0 5px 25px 2px rgba(0, 0, 0, 0.11);
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2);
     border-radius: 7px;
     cursor: pointer;
     padding: 1rem 0.8rem;
+    background-color: #f9f9f9;
 }
 
 .cat-image{
@@ -47,4 +57,23 @@
 
 .cat-block p{
     text-align: start;
+    color: black;
+}
+
+.cat-btn{
+    font-weight: 600;
+    margin-bottom: 3rem;
+    padding: 15px 20px;
+    background-color: green;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.cat-btn a{
+    color: #fff;
+    text-decoration: none;
 }
