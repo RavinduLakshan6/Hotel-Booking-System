@@ -41,8 +41,12 @@ export default function Navbar() {
             </ul>
 
             <div>
+
               { !isAuthenticated && <NavLink to="/login" activeClass="active"><button className="btn">Login</button></NavLink>}
               { !isAuthenticated && <NavLink to="/register" activeClass="active"><button className="btn">Register</button></NavLink>}
+              { !isAuthenticated && <button className="btn"><NavLink to="/login" activeClass="active">Login</NavLink></button>}
+              { !isAuthenticated && <button className="btn"><NavLink to="/register" activeClass="active">Register</NavLink></button>}
+
             </div>
 
             {/* <ul>

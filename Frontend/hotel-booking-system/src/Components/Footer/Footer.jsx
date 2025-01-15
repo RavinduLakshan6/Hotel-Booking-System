@@ -56,7 +56,10 @@ export default function Footer() {
         </div>
 
         <hr />
-        
+
+        <div className="footer-copyright">
+            Group 06 | All Right Reserved &copy; {new Date().getFullYear()}
+        </div>
     </div>
   );
 };
