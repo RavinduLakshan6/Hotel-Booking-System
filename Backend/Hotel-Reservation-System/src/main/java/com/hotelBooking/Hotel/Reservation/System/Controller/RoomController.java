@@ -24,7 +24,7 @@ public class RoomController {
     private BookingService bookingService;
 
  @PostMapping("/add")
-    @PreAuthorize("hasAuthority('ADMIN')")
+   // @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<Response> addNewRoom(
         @RequestParam(value="photo", required = false) MultipartFile photo,
         @RequestParam(value="roomType", required = false) String roomType,
