@@ -117,6 +117,12 @@ form{
   /* background: #1F51FF; #4169E1 */
   font-weight: 500;
   width: 110px;
+
+}
+
+.btn a{
+  text-decoration: none;
+  color: #fff !important;
 }
 
 .btn a{
@@ -163,6 +169,7 @@ button[type="submit"]:hover {
 /**REGISTRATION PAGE END HERE*/
 
 
+
 /* FOOTER COMPONENT STYLING */
 
 .footer-copyright {
@@ -175,6 +182,8 @@ button[type="submit"]:hover {
   width: 100%;
   font-weight: 500;
 }
+/* FOOTER STYLING */
+
 
 .footer-text{
   color: #fff;
@@ -185,6 +194,10 @@ button[type="submit"]:hover {
 
 .home {
   margin-bottom: 0px;
+}
+
+span{
+  color: red;
 }
 
 span{
@@ -426,7 +439,9 @@ span{
 /*ALL ROOMS PAGE STYLING START*/
 
 .all-rooms {
+
   margin: 100px 0px 0px 0px;
+  margin: 100px 0px 90px 0px;
 }
 
 .all-rooms h2 {
@@ -470,6 +485,16 @@ span{
 }
 
 /*ALL ROOMS PAGE STYLING ENDS*/
+
+
+/* FOOTER STYLES*/
+.footer-copyright {
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  opacity: 0.2;
+}
 
 
 /*PAGINATION COMPONENT STYLIMNG STARTS HERE*/
