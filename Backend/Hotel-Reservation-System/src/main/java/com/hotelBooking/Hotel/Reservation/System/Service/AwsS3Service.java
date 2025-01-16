@@ -18,19 +18,19 @@ import java.io.InputStream;
 @Service
 public class AwsS3Service {
 
-    private final String bucketName = "hotel-booking-system-images ";
+    private final String bucketName = "hote-booking-system-images";
 
 
     @Value("${aws.s3.access.key}")
     private String awsS3AccessKey;
 
-    @Value("{aws.s3.secret.key}")
+    @Value("${aws.s3.secret.key}")
     private String awsS3SecretKey;
 
     public String saveImageToS3(MultipartFile photo){
         String s3LocationImage = null;
 
-        try{
+        try(InputStream inputStream = photo.getInputStream()){
             String s3FileName = photo.getOriginalFilename();
 
             BasicAWSCredentials awsCredentials = new BasicAWSCredentials(awsS3AccessKey, awsS3SecretKey);
@@ -40,10 +40,10 @@ public class AwsS3Service {
             .withRegion(Regions.EU_NORTH_1)
             .build();
 
-            InputStream inputStream = photo.getInputStream();
+
             ObjectMetadata metadata = new ObjectMetadata();
 
-            metadata.setContentType("images/jpeg");
+            metadata.setContentType(photo.getContentType());
 
             PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, s3FileName, inputStream, metadata);
             s3Client.putObject(putObjectRequest);
