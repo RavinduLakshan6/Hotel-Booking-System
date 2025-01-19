@@ -33,5 +33,12 @@ const EditRoomPage = () => {
         };
         fetchRoomDetails();
     }, [roomId]);
-    
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setRoomDetails(prevState => ({
+            ...prevState,
+            [name]: value,
+        }));
+    }
 }
