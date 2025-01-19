@@ -99,4 +99,47 @@ const EditRoomPage = () => {
         }
        };
 
-    }
+       return (
+        <div className="edit-room-container">
+            <h2> Edit Room </h2> 
+            {error && <p className="error-message"> {error} </p>}
+            <div className="edit-room-form">
+                <div className="form-group">
+                    {preview? (
+                        <img src={preview} alt="Room Preview" className="room-photo-preview" />
+                    ) : (
+                        roomDetails.roomPhotoUrl && (
+                            <img src= {roomDetails.roomPhotoUrl} alt="Room" className="room-photo" />
+                        )
+                    )}
+                    <input 
+                        type="file"
+                        name="roomPhoto"
+                        onChange={handleFileChange}
+                    />
+                </div>
+                <div className="form-group">
+                    <label> Room Type </label>
+                    <input 
+                        type="text"
+                        name="roomType"
+                        value={roomDetails.roomType}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Room Description</label>
+                    <textarea
+                        name="roomDescription"
+                        value={roomDetails.roomDescription}
+                        onChange={handleChange}
+                    ></textarea>
+                </div>
+                <button className="update-button" onClick={handelUpdate}> Update Room </button> 
+                <button className="delete-button" onClick={handelDelete}> Delete Room</button>
+            </div>
+            </div>
+       );
+
+    };
+    export default EditRoomPage;
