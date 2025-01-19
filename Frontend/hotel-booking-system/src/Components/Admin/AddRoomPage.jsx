@@ -17,4 +17,31 @@ const AddRoomPage = () => {
     const [roomTypes, setRoomTypes] = useState([]);
     const [newRoomType, setNewRoomType] = useState([]);
    
+    useEffect(() => {
+        const fetchRoomTypes = async () => {
+            try {
+                const types = await ApiService.getRoomTypes();
+                setRoomTypes(types);
+            } catch (error) {
+                console.error('Error fetching room types:',error.message);
+            }
+        };
+        fetchRoomTypes();
+    }, []);
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setRoomDetails(prevState => ({
+            ...prevState,
+            [name]: value,
+        }));
+
+        const handleRoomTypeChange = (e) => {
+            if (e.target.value === 'new') {
+                setNewRoomType(true);
+                setRoomDetails(prevState => ({ ...prevState, roomType: '' }));
+            } else {
+                setNewRoomType(false);
+                setRoomDetails(prevState => ({ ...prevState, roomType: e.target.value }));
+            }
+        };
 }
