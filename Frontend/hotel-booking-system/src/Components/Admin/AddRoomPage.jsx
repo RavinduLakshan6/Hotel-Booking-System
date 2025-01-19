@@ -44,4 +44,52 @@ const AddRoomPage = () => {
                 setRoomDetails(prevState => ({ ...prevState, roomType: e.target.value }));
             }
         };
+      
+        const handleFileChange = (e) => {
+            const selectedFile = e.target.files[0];
+            if (selectedFile) {
+                setFile(selectedFile);
+                    setPreview(URL.createObjectURL(selectedFile));
+                } else {
+                    setFile(null);
+                    setPreview(null);
+                }
+            };
+        
+            const addRoom = async () => {
+                if (!roomDetails.roomType || !roomDetails.roomDescription) {
+                    setError('All room details must be provided.');
+                    setTimeout (() => setError(''), 5000);
+                    return;
+                }
+
+                if (!window.confirm('Do you want to add this room?')) {
+                    return
+                }
+
+                try{
+                    const formData = new FormData();
+                    formData.append('roomType', roomDetails.roomType);
+                    formData.append('roomPrice', roomDetails.roomPrice);
+                    formData.append('roomDescription', roomDetails.roomDescription);
+
+                    if (file) {
+                        formData.append('photo', file);
+                    }
+
+                    const result = await ApiService.addRoom(formData);
+                    if (result.statusCode === 200) {
+                        setSuccess('Room Added successfully.');
+
+                        setTimeout(() => {
+                            setSuccess('');
+                            navigatec('/admin/manage-rooms');
+                        }, 3000);
+                    }
+                } catch (error) {
+                    setError(error.response?.data?.message || error.message);
+                    setTimeout(() => setError(''), 5000);
+                }
+            };
+            
 }
