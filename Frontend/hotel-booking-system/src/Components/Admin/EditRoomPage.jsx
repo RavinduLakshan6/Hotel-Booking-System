@@ -80,4 +80,23 @@ const EditRoomPage = () => {
         }
        } ;
 
+       const handelDelete = async () => {
+        if (window.confirm('Do you want to delete this room?')) {
+            try {
+                const result = await ApiService.deleteRoom(roomId);
+                if (result,statusCode === 200) {
+                    setSuccess('Room Deleted Successfully.');
+
+                    setTimeout(() => {
+                        setSuccess('');
+                        navigate('/admin/manage-rooms');
+                    }, 3000);
+                }
+            } catch (error) {
+                setError(error.response?.data?.message || error.message);
+                setTimeout(() => setError(''), 5000);
+            }
+        }
+       };
+
     }
