@@ -16,5 +16,22 @@ const EditRoomPage = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
-   
+    useEffect(() => {
+        const fetchRoomDetails = async () => {
+            try {
+                const response = await ApiService.getRoomById(roomId);
+                setRoomDetails({
+                    roomPhotoUrl: response.room.roomPhotoUrl,
+                    roomType: response.room.roomType,
+                    roomPrice: response.room.roomPhotoUrl,
+                    roomDescription: response.room.roomDescription,
+                });
+            } catch (error) {
+                setError(error.response?.data?.message || error.message);
+
+            }
+        };
+        fetchRoomDetails();
+    }, [roomId]);
+    
 }
