@@ -34,6 +34,7 @@ const AddRoomPage = () => {
             ...prevState,
             [name]: value,
         }));
+    };
 
         const handleRoomTypeChange = (e) => {
             if (e.target.value === 'new') {
@@ -91,5 +92,65 @@ const AddRoomPage = () => {
                     setTimeout(() => setError(''), 5000);
                 }
             };
-            
-}
+         
+            return (
+                <div className = "edit-room-container">
+                    <h2> Add New Room </h2>
+                    {error && <p className = "error-message"> {error} </p> }
+                    {success && <p className = "success-message"> {success} </p> }
+                    <div className = "edit-room-form">
+                        <div className = "form-group">
+                            {preview && (
+                                <img src = {preview} alt="Room Preview" className = "room-photo-preview" />
+                            )}
+                            <input 
+                                type = "file"
+                                name = "roomPhoto"
+                                onChange = {handleFileChange}
+                                /> 
+                        </div>
+
+                        <div className="form-group">
+                            <label> Room Type </label>
+                            <select value={roomDetails.roomType} onChange={handleRoomTypeChange}>
+                                <option value = "" > "Select a room type </option>
+                                {roomTypes.map(type => (
+                                    <option key={type} value={type}> {type} </option>
+                                ))}
+                                <option value = "new"> Other (please specify) </option>
+                            </select>
+                            {newRoomType && (
+                                <input 
+                                    type = "text"
+                                    name = "roomType"
+                                    placeholder="Enter new room type"
+                                    value={roomDetails.roomType}
+                                    onChange={handleChange}
+                                    />
+                            )}
+                        </div>
+                        <div className="form-group" >
+                            <label> Room Price </label>
+                            <input
+                                type="text"
+                                name="roomPrice"
+                                value={roomDetails.roomPrice}
+                                onChange={handleChange}
+                                />
+
+                        </div>
+                        <div className="form-group">
+                            <label> Room Description </label>
+                            <textarea
+                                name="roomDescription"
+                                value={roomDetails.roomDescription}
+                                onChange={handleChange}
+                                ></textarea>
+                        </div>
+                        <button className="update-button" onClick={addRoom}> Add Room </button>
+                    </div>
+                </div>
+            );
+};
+
+export default AddRoomPage;
