@@ -70,12 +70,12 @@ const EditRoomPage = () => {
                 setTimeout(() => {
                     setSuccess('');
                     navigate('/admin/manage-rooms');
-                }, 3000);
+                }, 1000);
             }
-            setTimeout(() => setSuccess(''), 5000);
+            setTimeout(() => setSuccess(''), 3000);
         } catch (error) {
             setError(error.response?.data?.message || error.message);
-            setTimeout(() => setError(''), 5000);
+            setTimeout(() => setError(''), 3000);
         }
        } ;
 
@@ -89,7 +89,7 @@ const EditRoomPage = () => {
                     setTimeout(() => {
                         setSuccess('');
                         navigate('/admin/manage-rooms');
-                    }, 3000);
+                    }, 1000);
                 }
             } catch (error) {
                 setError(error.response?.data?.message || error.message);
