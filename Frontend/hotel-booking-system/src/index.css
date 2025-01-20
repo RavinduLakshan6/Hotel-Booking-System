@@ -4,6 +4,7 @@
   color: #333;
   box-sizing: border-box;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 hr{
@@ -86,6 +87,10 @@ form{
 
 .nav .logo a span{
   color: green;
+}
+
+.nav ul li .special-link{
+  color: red;
 }
 
 .nav ul{
@@ -173,7 +178,6 @@ button[type="submit"]:hover {
 /* FOOTER COMPONENT STYLING */
 
 .footer-copyright {
-  color: #fff;
   background-color: #000;
   padding: 20px;
   text-align: center;
@@ -323,26 +327,28 @@ span{
   height: 20vh;
   margin: 5px auto;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: hidden;
   display: flex;
 }
 
 .room-list-item-image {
   width: 20%;
-  /* Adjust image width */
   height: 20vh;
 }
 
 .room-details {
   flex: 1;
-  /* Take remaining space */
   padding: 15px;
   margin-left: 10px;
 }
 
 .room-details h3 {
-  color: #007F86;
+  color: green;
+}
+
+.room-details p{
+  color: #333;
 }
 
 .room-detail-loading {
@@ -350,7 +356,7 @@ span{
   font-size: 20px;
   font-weight: 600;
   margin-top: 20px;
-  color: #666;
+  color: black;
 
 }
 
@@ -485,16 +491,6 @@ span{
 }
 
 /*ALL ROOMS PAGE STYLING ENDS*/
-
-
-/* FOOTER STYLES*/
-.footer-copyright {
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  width: 100%;
-  opacity: 0.2;
-}
 
 
 /*PAGINATION COMPONENT STYLIMNG STARTS HERE*/
@@ -741,7 +737,7 @@ p {
 /* ADMIN HOME STYLE */
 .admin-page {
   max-width: 800px;
-  margin: 50px auto;
+  margin: 120px auto 50px;
   padding: 20px;
   border-radius: 10px;
   background-color: #ffffff;
@@ -750,11 +746,11 @@ p {
 }
 
 .welcome-message {
-  font-size: 2em;
+  font-size: 3em;
   color: #333;
   margin-bottom: 20px;
-  font-weight: bold;
-  color: #007F86;
+  font-weight: 600;
+  color: green;
 }
 
 .admin-actions {
@@ -766,6 +762,7 @@ p {
 .admin-button {
   padding: 15px 30px;
   font-size: 1em;
+  font-weight: 500;
   color: white;
   background-color: green;
   border: none;
@@ -793,7 +790,7 @@ p {
 }
 
 .edit-room-button {
-  background-color: #007F86;
+  background-color: green;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -811,7 +808,7 @@ p {
 
 .edit-room-container {
   max-width: 600px;
-  margin: 50px auto;
+  margin: 120px auto;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 10px;
@@ -839,12 +836,14 @@ p {
 
 .edit-room-form .form-group {
   margin-bottom: 15px;
+  text-align: center;
 }
 
 .edit-room-form .form-group label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  text-align: start;
 }
 
 .edit-room-form .form-group input,
@@ -879,12 +878,13 @@ p {
   border: none;
   border-radius: 5px;
   font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
   text-align: center;
 }
 
 .update-button {
-  background-color: #28a745;
+  background-color: green;
   color: white;
 }
 
@@ -893,18 +893,21 @@ p {
   color: white;
 }
 
-.update-button:hover,
-.delete-button:hover {
-  opacity: 0.8;
+.update-button:hover {
+  background-color: darkgreen;
 }
 
-/*B0oking & manage booking styling*/
+.delete-button:hover {
+  background-color: red;
+}
+
+/*Booking & manage booking styling*/
 
 
 /* General Styling */
 .bookings-container {
   max-width: 900px;
-  margin: 20px auto;
+  margin: 120px auto 50px;
   padding: 20px;
   background: #f7f7f7;
   border-radius: 8px;

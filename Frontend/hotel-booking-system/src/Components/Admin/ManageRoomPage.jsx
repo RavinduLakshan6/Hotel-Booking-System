@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ApiService from '../.../Service/ApiService';
+import ApiService from '../../Service/ApiService';
 import Pagination from '../Pagination/Pagination'
 import RoomResult from '../Room/RoomResult';
 

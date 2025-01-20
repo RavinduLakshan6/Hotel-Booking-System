@@ -47,8 +47,8 @@ function RegisterPage() {
                 setSuccessMessage('User registered successfully');
                 setTimeout(() => {
                     setSuccessMessage('');
-                    navigate('/');
-                }, 3000);
+                    navigate('/login');
+                }, 1000);
             }
         }
          catch (error) {

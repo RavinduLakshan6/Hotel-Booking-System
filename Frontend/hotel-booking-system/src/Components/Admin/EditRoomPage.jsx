@@ -44,8 +44,7 @@ const EditRoomPage = () => {
 
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
-        if (selectedFile) {
-            setFile(selectedFile);
+            if (selectedFile) {
                 setFile(selectedFile);
                 setPreview(URL.createObjectURL(selectedFile));
             } else {
@@ -71,12 +70,12 @@ const EditRoomPage = () => {
                 setTimeout(() => {
                     setSuccess('');
                     navigate('/admin/manage-rooms');
-                }, 3000);
+                }, 1000);
             }
-            setTimeout(() => setSuccess(''), 5000);
+            setTimeout(() => setSuccess(''), 3000);
         } catch (error) {
             setError(error.response?.data?.message || error.message);
-            setTimeout(() => setError(''), 5000);
+            setTimeout(() => setError(''), 3000);
         }
        } ;
 
@@ -84,13 +83,13 @@ const EditRoomPage = () => {
         if (window.confirm('Do you want to delete this room?')) {
             try {
                 const result = await ApiService.deleteRoom(roomId);
-                if (result,statusCode === 200) {
+                if (result.statusCode === 200) {
                     setSuccess('Room Deleted Successfully.');
 
                     setTimeout(() => {
                         setSuccess('');
                         navigate('/admin/manage-rooms');
-                    }, 3000);
+                    }, 1000);
                 }
             } catch (error) {
                 setError(error.response?.data?.message || error.message);
@@ -101,8 +100,9 @@ const EditRoomPage = () => {
 
        return (
         <div className="edit-room-container">
-            <h2> Edit Room </h2> 
-            {error && <p className="error-message"> {error} </p>}
+            <h2>Edit Room</h2> 
+            {error && <p className="error-message">{error}</p>}
+            {success && <p className="success-message">{success}</p>}
             <div className="edit-room-form">
                 <div className="form-group">
                     {preview? (
@@ -128,6 +128,15 @@ const EditRoomPage = () => {
                     />
                 </div>
                 <div className="form-group">
+                    <label>Room Price</label>
+                    <input
+                        type="text"
+                        name="roomPrice"
+                        value={roomDetails.roomPrice}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="form-group">
                     <label>Room Description</label>
                     <textarea
                         name="roomDescription"
@@ -135,11 +144,12 @@ const EditRoomPage = () => {
                         onChange={handleChange}
                     ></textarea>
                 </div>
-                <button className="update-button" onClick={handelUpdate}> Update Room </button> 
-                <button className="delete-button" onClick={handelDelete}> Delete Room</button>
+                <button className="update-button" onClick={handelUpdate}>Update Room</button> 
+                <button className="delete-button" onClick={handelDelete}>Delete Room</button>
             </div>
             </div>
        );
 
     };
+
     export default EditRoomPage;

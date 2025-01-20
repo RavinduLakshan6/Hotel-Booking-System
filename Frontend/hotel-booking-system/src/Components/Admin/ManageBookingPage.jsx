@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ApiService from '../../Service/ApiService';
-import Pagination from '../Components/Pagination/Pagination';
+import Pagination from '../Pagination/Pagination';
 
 const ManageBookingsPage = () => {
     const [bookings, setBookings] = useState([]);

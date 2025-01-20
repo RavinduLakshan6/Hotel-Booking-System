@@ -26,7 +26,6 @@ const HomePage = () => {
             {/* HEADER / BANNER ROOM SECTION */}
             <section>
                 <header className="header-banner">
-                    {/* <img src="./assets/images/hotel.webp" alt="beach side Hotel" className="header-image" /> */}
                     <div className="overlay"></div>
                     <div className="animated-texts overlay-content">
                         <h1>Welcome to Beach Side Hotel</h1>
