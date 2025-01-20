@@ -31,35 +31,18 @@ export default function Navbar() {
               <li><NavLink to="/Review" activeClass="active">Reviews</NavLink></li>
               <li><NavLink to="/about" activeClass="active">About</NavLink></li>
 
-              { isUser && <li><NavLink to="/profile" activeClass="active" className="btn">Profile</NavLink></li>}
-              { isAdmin && <li><NavLink to="/admin" activeClass="active" className="btn">Admin</NavLink></li>}
+              { isUser && <li><NavLink to="/profile" activeClass="active" className="special-link">Profile</NavLink></li>}
+              { isAdmin && <li><NavLink to="/admin" activeClass="active" className="special-link">Admin</NavLink></li>}
 
-              {/* { !isAuthenticated && <li><NavLink to="/login" activeClass="active" className="btn">Login</NavLink></li>} */}
-              {/* { !isAuthenticated && <li><NavLink to="/register" activeClass="active" className="btn">Register</NavLink></li>} */}
-
-              { isAuthenticated && <li onClick={handleLogout}>Logout</li>}
             </ul>
 
             <div>
-
+            { isAuthenticated && <button onClick={handleLogout} className="btn">Logout</button>}
               { !isAuthenticated && <NavLink to="/login" activeClass="active"><button className="btn">Login</button></NavLink>}
               { !isAuthenticated && <NavLink to="/register" activeClass="active"><button className="btn">Register</button></NavLink>}
-              { !isAuthenticated && <button className="btn"><NavLink to="/login" activeClass="active">Login</NavLink></button>}
-              { !isAuthenticated && <button className="btn"><NavLink to="/register" activeClass="active">Register</NavLink></button>}
-
+            
             </div>
 
-            {/* <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/room">Rooms</a></li>
-                <li><a href="/review">Reviews</a></li>
-                <li><a href="/about">About Us</a></li>
-            </ul> 
-
-            <div className="navBtn">
-                <button className="loginBtn">Login</button>  
-                <button className="regBtn">Register</button>    
-            </div>    */}
     </div>
   );
 }
