@@ -59,7 +59,7 @@ public static BookingRequest mapBookingEntityToBookingRequest(Booking booking){
     bookingRequest.setCheckIDate(booking.getCheckInDate());
     bookingRequest.setCheckOutDate(booking.getCheckOutDate());
     bookingRequest.setTotalGuests(booking.getTotalGuests());
-    bookingRequest.setBookingConformationCode(booking.getBookingConformationCode());
+   // bookingRequest.setBookingConformationCode(booking.getBookingConformationCode());
     return bookingRequest;
 }
 
@@ -85,7 +85,7 @@ public static BookingRequest mapBookingEntityToBookingRequestPlusBookedRooms(Boo
     bookingRequest.setCheckIDate(booking.getCheckInDate());
     bookingRequest.setCheckOutDate(booking.getCheckOutDate());
     bookingRequest.setTotalGuests(booking.getTotalGuests());
-    bookingRequest.setBookingConformationCode(booking.getBookingConformationCode());
+  //  bookingRequest.setBookingConformationCode(booking.getBookingConformationCode());
     
     if(mapUser){
         bookingRequest.setUser(Utils.mapUserEntityToUserRequest(booking.getUser()));
