@@ -93,7 +93,7 @@ const EditRoomPage = () => {
                 }
             } catch (error) {
                 setError(error.response?.data?.message || error.message);
-                setTimeout(() => setError(''), 5000);
+                setTimeout(() => setError(''), 3000);
             }
         }
        };

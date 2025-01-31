@@ -35,7 +35,8 @@ const AllRoomsPage = () => {
         const fetchRoomTypes = async () => {
             try {
                 const types = await ApiService.getRoomTypes();
-                setRoomTypes(types);
+                const parsedTypes = types.map(type => JSON.parse(type)); 
+                setRoomTypes(parsedTypes);
             } catch (error) {
                 console.error('Error fetching room types:', error.message);
             }
@@ -76,9 +77,9 @@ const AllRoomsPage = () => {
                 <label>Filter by Room Type:</label>
                 <select value={selectedRoomType} onChange={handleRoomTypeChange}>
                     <option value="">All</option>
-                    {roomTypes.map((type) => (
-                        <option key={type} value={type}>
-                            {type}
+                    {roomTypes.map((type,index) => (
+                        <option key={index} value={type.roomType}>
+                            {type.roomType}
                         </option>
                     ))}
                 </select>

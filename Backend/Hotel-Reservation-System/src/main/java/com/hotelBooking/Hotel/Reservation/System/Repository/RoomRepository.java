@@ -11,7 +11,13 @@ import java.util.List;
 public interface RoomRepository extends MongoRepository<Room, String> {
 
     // @Aggregation("{$group: {_id: '$roomType'}}")
-    @Query("SELECT DISTINCT r.roomType FROM Room r")
+    // @Query("SELECT DISTINCT r.roomType FROM rooms r")
+    // List<String> findDistinctRoomType();
+    
+    // @Query(value = "{}", fields = "{ 'roomType' : 1 }")
+    // List<Room> findDistinctRoomType();
+
+    @Query(value = "{}", fields = "{ 'roomType': 1, '_id': 0 }")
     List<String> findDistinctRoomType();
 
     // @Query("{'bookings':{$size:0}}")
