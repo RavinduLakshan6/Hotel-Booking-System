@@ -45,7 +45,7 @@ function App() {
         <Route path='/register' element={<RegisterPage/>}/>
 
 
-        <Route path='/room-details-book/roomId' element={<ProtectedRoute element={<RoomDetailsPage/>} /> }/>
+        <Route path='/room-details-book/:roomId' element={<ProtectedRoute element={<RoomDetailsPage/>} /> }/>
         <Route path='/profile' element={<ProtectedRoute element={<ProfilePage/>} /> }/>
         <Route path='/edit-profile' element={<ProtectedRoute element={<EditProfilePage/>} />}/>
 

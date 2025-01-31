@@ -125,10 +125,10 @@ const RoomDetailsPage = () => {
     const { roomType, roomPrice, roomPhotoUrl, Description, bookings } = roomDetails;
 
     return (
-        <div className="room-detail-booking">
+        <div className="room-details-booking">
             {showMessage && (
                 <p className="booking-success-message">
-                    Booking Successfull! Confirmation Code: {confirmationCode}
+                    Booking Successfull!
                 </p>
             )}
             {errorMessage && (
@@ -138,8 +138,8 @@ const RoomDetailsPage = () => {
             )}
             <h2>Room Details</h2>
             <br />
-            <img src={roomPhotoUrl} alt={roomType} className="room-detail-image" />
-            <div className="room-detail-info">
+            <img src={roomPhotoUrl} alt={roomType} className="room-details-image" />
+            <div className="room-details-info">
                 <h3>{roomType}</h3>
                 <p>Price: ${roomPrice} / night</p>
                 <p> {Description} </p>
