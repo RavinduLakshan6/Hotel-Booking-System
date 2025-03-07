@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ApiService from "../../Service/ApiService";
 
@@ -23,12 +23,11 @@ const EditRoomPage = () => {
                 setRoomDetails({
                     roomPhotoUrl: response.room.roomPhotoUrl,
                     roomType: response.room.roomType,
-                    roomPrice: response.room.roomPhotoUrl,
+                    roomPrice: response.room.roomPrice,
                     roomDescription: response.room.roomDescription,
                 });
             } catch (error) {
                 setError(error.response?.data?.message || error.message);
-
             }
         };
         fetchRoomDetails();
@@ -44,17 +43,17 @@ const EditRoomPage = () => {
 
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
-            if (selectedFile) {
-                setFile(selectedFile);
-                setPreview(URL.createObjectURL(selectedFile));
-            } else {
-                setFile(null);
-                setPreview(null);
-            }
-        };
+        if (selectedFile) {
+            setFile(selectedFile);
+            setPreview(URL.createObjectURL(selectedFile));
+        } else {
+            setFile(null);
+            setPreview(null);
+        }
+    };
 
-       const handelUpdate = async () => {
-        try{
+    const handleUpdate = async () => {
+        try {
             const formData = new FormData();
             formData.append('roomType', roomDetails.roomType);
             formData.append('roomPrice', roomDetails.roomPrice);
@@ -77,9 +76,9 @@ const EditRoomPage = () => {
             setError(error.response?.data?.message || error.message);
             setTimeout(() => setError(''), 3000);
         }
-       } ;
+    };
 
-       const handelDelete = async () => {
+    const handleDelete = async () => {
         if (window.confirm('Do you want to delete this room?')) {
             try {
                 const result = await ApiService.deleteRoom(roomId);
@@ -96,31 +95,31 @@ const EditRoomPage = () => {
                 setTimeout(() => setError(''), 3000);
             }
         }
-       };
+    };
 
-       return (
+    return (
         <div className="edit-room-container">
-            <h2>Edit Room</h2> 
+            <h2>Edit Room</h2>
             {error && <p className="error-message">{error}</p>}
             {success && <p className="success-message">{success}</p>}
             <div className="edit-room-form">
                 <div className="form-group">
-                    {preview? (
+                    {preview ? (
                         <img src={preview} alt="Room Preview" className="room-photo-preview" />
                     ) : (
                         roomDetails.roomPhotoUrl && (
-                            <img src= {roomDetails.roomPhotoUrl} alt="Room" className="room-photo" />
+                            <img src={roomDetails.roomPhotoUrl} alt="Room" className="room-photo" />
                         )
                     )}
-                    <input 
+                    <input
                         type="file"
                         name="roomPhoto"
                         onChange={handleFileChange}
                     />
                 </div>
                 <div className="form-group">
-                    <label> Room Type </label>
-                    <input 
+                    <label>Room Type</label>
+                    <input
                         type="text"
                         name="roomType"
                         value={roomDetails.roomType}
@@ -144,12 +143,11 @@ const EditRoomPage = () => {
                         onChange={handleChange}
                     ></textarea>
                 </div>
-                <button className="update-button" onClick={handelUpdate}>Update Room</button> 
-                <button className="delete-button" onClick={handelDelete}>Delete Room</button>
+                <button className="update-button" onClick={handleUpdate}>Update Room</button>
+                <button className="delete-button" onClick={handleDelete}>Delete Room</button>
             </div>
-            </div>
-       );
+        </div>
+    );
+};
 
-    };
-
-    export default EditRoomPage;
+export default EditRoomPage;
