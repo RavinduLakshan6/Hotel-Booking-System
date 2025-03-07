@@ -856,6 +856,12 @@ p {
   resize: none;
 }
 
+.edit-room-form .form-group select{
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
 .edit-room-form .form-group textarea {
   height: 100px;
 }
@@ -1066,6 +1072,10 @@ h2 {
   gap: 15px;
 }
 
+.booking-list p{
+  color: black;
+}
+
 .booking-item {
   padding: 15px;
   background-color: #fff;
@@ -1075,6 +1085,7 @@ h2 {
 
 .booking-item p {
   margin: 5px 0;
+  color: black;
 }
 
 .room-photo {
@@ -1091,7 +1102,7 @@ h2 {
 
 .edit-profile-page {
   max-width: 800px;
-  margin: 20px auto auto;
+  margin: 100px auto auto;
   padding: 20px;
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
@@ -1111,6 +1122,7 @@ h2 {
 
 .profile-details p {
   margin: 5px 0;
+  color: black;
 }
 
 .delete-profile-button {

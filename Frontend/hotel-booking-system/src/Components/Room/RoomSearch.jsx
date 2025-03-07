@@ -14,7 +14,8 @@ const RoomSearch = ({ handleSearchResult }) => {
     const fetchRoomTypes = async () => {
       try {
         const types = await ApiService.getRoomTypes();
-        setRoomTypes(types);
+        const parsedTypes = types.map(type => JSON.parse(type)); 
+        setRoomTypes(parsedTypes);
       } catch (error) {
         console.error('Error fetching room types:', error.message);
       }
@@ -53,7 +54,7 @@ const RoomSearch = ({ handleSearchResult }) => {
         setError('');
       }
     } catch (error) {
-      showError("Unown error occured: " + error.response.data.message);
+      showError("Unknown error occured: " + error.response.data.message);
     }
   };
 
@@ -82,13 +83,13 @@ const RoomSearch = ({ handleSearchResult }) => {
         <div className="search-field">
           <label>Room Type</label>
           <select value={roomType} onChange={(e) => setRoomType(e.target.value)}>
-            <option disabled value="">
+            <option value="">
               Select Room Type
             </option>
-            {roomTypes.map((roomType) => (
-              <option key={roomType} value={roomType}>
-                {roomType}
-              </option>
+            {roomTypes.map((type,index) => (
+                <option key={index} value={type.roomType}>
+                    {type.roomType}
+                </option>
             ))}
           </select>
         </div>

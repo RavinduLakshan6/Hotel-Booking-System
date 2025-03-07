@@ -21,7 +21,8 @@ const AddRoomPage = () => {
         const fetchRoomTypes = async () => {
             try {
                 const types = await ApiService.getRoomTypes();
-                setRoomTypes(types);
+                const parsedTypes = types.map(type => JSON.parse(type)); 
+                setRoomTypes(parsedTypes);
             } catch (error) {
                 console.error('Error fetching room types:',error.message);
             }
@@ -114,8 +115,10 @@ const AddRoomPage = () => {
                             <label>Room Type </label>
                             <select value={roomDetails.roomType} onChange={handleRoomTypeChange}>
                                 <option value = "" >Select a room type </option>
-                                {roomTypes.map(type => (
-                                    <option key={type} value={type}> {type} </option>
+                                {roomTypes.map((type,index) => (
+                        <option key={index} value={type.roomType}>
+                            {type.roomType}
+                        </option>
                                 ))}
                                 <option value = "new"> Other (please specify) </option>
                             </select>
