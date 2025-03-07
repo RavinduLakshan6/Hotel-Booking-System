@@ -53,8 +53,9 @@ public class RoomController {
         return roomService.getAllRoomTypes();
     }
 
-    @GetMapping("/room-by-id/(roomId)")
+    @GetMapping("/room-by-id/{roomId}")
     public ResponseEntity<Response> getRoomById(@PathVariable String roomId){
+
         Response response = roomService.getRoomById(roomId);
         return ResponseEntity.status(response.getStatusCode()).body(response);
     }
