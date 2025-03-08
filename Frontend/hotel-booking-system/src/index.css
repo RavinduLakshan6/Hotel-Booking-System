@@ -558,6 +558,10 @@ span{
   margin-bottom: 20px;
 }
 
+.room-details-info p{
+  color: red;
+}
+
 .book-now-button {
   background-color: green;
   color: white;

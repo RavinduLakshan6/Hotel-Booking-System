@@ -31,8 +31,8 @@ const RoomResult = ({ roomSearchResults }) => {
                                     <button
                                         className="book-now-button"
                                         onClick={() => navigate(`/room-details-book/${room.id}`)}
-                                    >
-                                        View/Book Now
+                                    >View/Book Now
+                                        
                                     </button>
                                 )}
                             </div>
